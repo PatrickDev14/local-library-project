@@ -1,6 +1,17 @@
-function getTotalBooksCount(books) {}
+/* Requirements - */
 
-function getTotalAccountsCount(accounts) {}
+//return the number of book objects inside the books array; use .length
+//should return zero if the array is empty
+function getTotalBooksCount(books) {
+  return books.length;
+}
+
+//return the number of account objects in the accounts array; use .length
+//should return zero if the array is empty
+function getTotalAccountsCount(accounts) {
+  return accounts.length;
+}
+
 
 function getBooksBorrowedCount(books) {}
 
