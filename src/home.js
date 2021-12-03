@@ -22,9 +22,21 @@ function getBooksBorrowedCount(books) {
   return booksNotReturned(books).length;  
 }
 
+/* for a count variable, */
 function getMostCommonGenres(books) {}
 
-function getMostPopularBooks(books) {}
+/* return an array of book objects that are {name: book title, count: borrow arrays length}
+let bookBorrows use map() to store these objects from books array;
+return bookBorrows.sort() for bookBorrows by count;
+learn slice() to limit to five book objects; the ending index is omitted from array, so 0-5 */
+function getMostPopularBooks(books) {
+  let bookBorrows = books.map((book) => {
+    return { name: book.title, count: book.borrows.length };
+});
+  return bookBorrows.sort((a,b) =>
+    (a.count < b.count ? 1: -1)).slice(0,5);
+}
+
 
 function getMostPopularAuthors(books, authors) {}
 
