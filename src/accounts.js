@@ -27,13 +27,11 @@ function getTotalNumberOfBorrows(account, books) {
   return totalBorrows;
 }
 
-//CLEAN this
-//for an account id, forEach(account) see if books.borrows.id === account.id && books.borrows.returned === false;
-//only first books.borrows transaction matters?
-//if book.authorId === author.id, 
-//then shorthand a book object that includes author object from authors.js
-//push new book object to new acctBorrows array
-
+/*use filter() over books array and some() over book.borrow array to find a Not Returned transactions for 
+the account parameter
+map() the book object, if book.authorId === author.id, to include the author object 
+use find() for this task
+*/
 function getBooksPossessedByAccount(account, books, authors) {
   return books.filter((book) =>
     book.borrows.some(curAcct => 
@@ -44,6 +42,7 @@ function getBooksPossessedByAccount(account, books, authors) {
           book.author = author; return book 
         })
 }
+
 module.exports = {
   findAccountById,
   sortAccountsByLastName,
